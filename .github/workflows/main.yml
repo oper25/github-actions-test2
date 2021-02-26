@@ -29,10 +29,10 @@ jobs:
       
       #connect to aws account using credentials from SETTING -> SECRET
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
+      uses: aws-actions/configure-aws-credentials@v1          #script to connect to aws
+      with:                                                   #using global variables
         aws-access-key-id : ${{secrets.MY_AWS_ACCES_KEY}}
-        aws-access-key-access-key : ${{secrets.MY_AWS_SECRET_KEY}}
+        aws-secret-access-key : ${{secrets.MY_AWS_SECRET_KEY}}
         aws-region : ${{env.AWS_REGION_NAME}}
 
     #copy zip file to s3 bucket
